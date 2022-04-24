@@ -1,7 +1,5 @@
-cmake_minimum_required(VERSION 3.22)
-project(bilivideomerge VERSION 1.0.0)
-
-message("CMAKE_VERSION: ${CMAKE_VERSION}")
+cmake_minimum_required(VERSION 3.20)
+project(bilivideomerge VERSION 1.0.1)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_AUTOMOC ON)
@@ -16,19 +14,12 @@ find_package(Qt5 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(bilivideomerge main.cpp bmergewidget.cpp bmergewidget.h bmergewidget.ui)
+add_executable(bilivideomerge main.cpp)
 target_link_libraries(bilivideomerge
         Qt5::Core
         Qt5::Gui
         Qt5::Widgets
         )
-##库添加版本信息
-#if(MSVC)
-#    set(MY_VERSIONINFO_RC "${CMAKE_BINARY_DIR}/VersionInfo.rc")
-#    configure_file("${CMAKE_SOURCE_DIR}/VersionInfo.rc.in"
-#            "${MY_VERSIONINFO_RC}")
-#endif()
-#add_library(${TARGET_NAME} SHARED ${PUBLIC_HEADERS} ${PRIVATE_HEADERS} ${SOURCES} ${MY_VERSIONINFO_RC})
 
 if (WIN32)
     set(DEBUG_SUFFIX)
