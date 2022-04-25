@@ -1,8 +1,11 @@
+#include "BiliWidget.h"
+
 #include <QApplication>
 
-
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     QApplication a(argc, argv);
-
-    return QApplication::exec();
+    BiliWidget w;
+    w.show();
+    return a.exec();
 }
