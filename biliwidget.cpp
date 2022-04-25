@@ -1,8 +1,11 @@
 #include "BiliWidget.h"
 #include "./ui_BiliWidget.h"
+#include <QFileDialog>
 #include <QHeaderView>
 #include <QStandardItemModel>
-//#include <EditTrigger>
+#include <QDebug>
+
+#define qcout qDebug()<<"["<<__FILE__<<__func__<<__LINE__<<"]"
 
 BiliWidget::BiliWidget(QWidget *parent)
     : QMainWindow(parent)
@@ -37,5 +40,21 @@ BiliWidget::BiliWidget(QWidget *parent)
 BiliWidget::~BiliWidget()
 {
     delete ui;
+}
+
+
+void BiliWidget::on_srcBtn_clicked()
+{
+    auto appDir = QCoreApplication::applicationDirPath();
+    srcDirPath = QFileDialog::getExistingDirectory(this, "选择视频目录", appDir);
+    qcout<<"src path"<<srcDirPath;
+}
+
+
+void BiliWidget::on_desBtn_clicked()
+{
+    auto appDir = QCoreApplication::applicationDirPath();
+    desDirPath = QFileDialog::getExistingDirectory(this, "选择保存目录", appDir);
+    qcout<<"des path"<<desDirPath;
 }
 

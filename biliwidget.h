@@ -17,10 +17,17 @@ public:
     BiliWidget(QWidget *parent = nullptr);
     ~BiliWidget();
 
+private slots:
+    void on_srcBtn_clicked();
+
+    void on_desBtn_clicked();
+
 private:
     Ui::BiliWidget *ui;
     QHeaderView* headerView;
     QStandardItemModel *modelData;
     QStringList headerText;
+    QString srcDirPath;
+    QString desDirPath;
 };
 #endif // BILIWIDGET_H
