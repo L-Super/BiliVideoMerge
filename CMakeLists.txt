@@ -27,6 +27,7 @@ set(PROJECT_SOURCES
     ${SRC}
     ${HEADER}
     ${UIFILE}
+    Resources.qrc
 )
 
 message("Qt Version " ${QT_VERSION})
