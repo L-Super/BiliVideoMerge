@@ -88,6 +88,12 @@ json有用数据：
 }
 ```
 
+#### ffmpeg命令
+
+```shell
+./ffmpeg -i video.m4s -i audio.m4s -c copy -y out.mp4
+```
+
 
 
 
